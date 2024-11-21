@@ -1,0 +1,51 @@
+.contenedor-productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.producto {
+	width: 22%;
+	border: 1px solid #333;
+	border-radius: .5rem;
+	padding: .5rem;
+	background-color: #eee;
+	margin: 1rem auto;
+    /*atributos para alinear en vertical el contenido de la ficha*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.titulo-producto {
+	font-size: 1.4rem;
+	text-align: center;
+	margin-bottom: 2rem;
+}
+.contenedor-img {
+	border: 1px solid #333;
+	border-radius: 1rem;
+	overflow: hidden;
+}
+/*al cambiar el display de la imagen de línea a bloque conseguimos que esta se ajuste al borde inferior de su contenedor, y no quede un espacio de separación*/
+.foto-producto {
+	display: block;
+}
+.desc-producto {
+	font-size: 1rem;
+	margin: 1rem 0;
+	color: #333;
+}
+.btn-producto {
+	font-size: 1.1rem;
+	padding: .2rem .5rem;
+	width: 60%;
+	margin-left: 20%;
+}
+.txt-producto {
+	background-color: #fff;
+	padding: .5rem;
+	margin: 1rem 0;
+	height: 280px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}

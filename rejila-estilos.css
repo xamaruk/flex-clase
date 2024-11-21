@@ -1,0 +1,45 @@
+.contenedor-productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.producto {
+    width: 32%;
+}
+.disparador {
+    position: relative;
+    border: 1px solid darkcyan;
+}
+.emergente {
+	border: 1px solid darkcyan;
+	padding: 1rem;
+	background-color: aliceblue;
+	position: absolute;
+	left: 90%;
+	top: 1rem;
+	z-index: 1;
+    width: 80%;
+    display: none;
+    border-radius: 1rem;
+}
+.tit-prod {
+	color: darkcyan;
+	font-size: 1rem;
+}
+.desc-prod {
+	font-size: .8rem;
+	color: grey;
+}
+.btn-prod {
+	font-size: 1.1rem;
+	margin: 1rem 20% 0;
+	width: 50%;
+	color: darkcyan;
+	border: 1px solid darkcyan;
+}
+.disparador:hover > .emergente {
+    display: block;
+}
+.producto:hover {
+    background-color: darkcyan;
+}

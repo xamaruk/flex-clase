@@ -1,0 +1,20 @@
+.disparador {
+	border: 1px solid black;
+}
+.emergente {
+	background-color: red;
+}
+.disparador + .emergente {
+	color: white;
+}
+.disparador > .emergente {
+	color: lime;
+}
+
+.contenedor-producto {
+	display: flex;
+	flex-wrap: wrap;
+}
+.producto {
+	width: 49%;
+}

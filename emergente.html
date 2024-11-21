@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css" type="text/css">
+    <link rel="stylesheet" href="emergente-estilos.css">
+    <title>Ejemplo de uso de propiedad Flex</title>
+</head>
+
+<body>
+    <div class="contenedor">
+        <header class="cabecera">
+            <h1>Uso de <em>Flexbox</em></h1>
+        </header>
+        <div class="caja-flex">
+            <aside class="lateral">
+                <section>
+                    <h2>Noticias de interés</h2>
+                    <ul class="lista-noticias">
+                        <li class="item-noticias"><a href="display_flex.html">Inicio</a></li>
+                        <li class="item-noticias"><a href="productos.html">Productos</a></li>
+                        <li class="item-noticias"><a href="emergente.html" class="seleccionado">Emergente</a></li>
+                        <li class="item-noticias"><a href="rejilla.html">Rejilla</a></li>
+                        <li class="item-noticias"><a href="">Noticia número 5</a></li>
+                        <li class="item-noticias"><a href="">Noticia número 6</a></li>
+                    </ul>
+                </section>
+                <section class="banners">
+                    <div class="publi">
+                        <h5>Atención</h5>
+                        <p>Ventas privadas</p>
+                    </div>
+                    <div class="publi">
+                        <h5>Ojo!</h5>
+                        <p>Ventas de saldo</p>
+                    </div>
+                    <div class="publi">
+                        <h5>Cuidao!!</h5>
+                        <p>Ventas y reventas</p>
+                    </div>
+                </section>
+            </aside>
+            <main class="principal">
+                <h2>Página de Productos Flex</h2>
+                <section class="contenedor-productos">
+                    <article class="producto">
+                        <h3>Ejemplo de selector adyacente:</h3>
+                        <p>Con este html:</p>
+                        <pre><code>
+                            &lt;div class="disparador">
+                                &lt;p>Dispárame&lt;/p>
+                            &lt;/div>
+                            &lt;div class="emergente">
+                                &lt;p>Pam!&lt;/p>
+                            &lt;div>
+                            <p>Y este css</p>
+                            .disparador + .emergente {
+                                color: white;
+                            }
+                        </code></pre>
+                        <p>Afectamos al elemento con la clase "emergente" cuando está a continuación de "disparador":
+                        </p>
+                        <div class="disparador">
+                            <p>Dispárame</p>
+                        </div>
+                        <div class="emergente">
+                            <p>Pam!</p>
+                        </div>
+                        <p>Pero si está después de otro elemento no le afecta ese selector:</p>
+                        <p>Sigue el contenido del artículo</p>
+                        <div class="emergente">
+                            <p>Estoy fuera del disparador</p>
+                        </div>
+                    </article>
+                    <article class="producto">
+                        <h3>Ejemplo de selector anidado:</h3>
+                        <p>Con este html:</p>
+<pre><code>
+    &lt;div class="disparador">
+    &lt;p>Dispárame&lt;/p>
+        &lt;div class="emergente">
+         &lt;p>Pam!&lt;/p>
+        &lt;div>
+        &lt;/div>
+        <p>Y este css</p>
+        .disparador > .emergente {
+        color: lime;
+        }
+                        </code></pre>
+                        <p>Afectamos al elemento con la clase "emergente" cuando está dentro, como hijo directo, de
+                            "disparador":</p>
+                        <div class="disparador">
+                            <p>Dispárame</p>
+                            <div class="emergente">
+                                <p>Pam!</p>
+                            </div>
+                        </div>
+                        <p>Pero si no es hijo directo (hay otro u otros elementos contenedores ente ambos) no le afecta
+                            ese selector:</p>
+
+                        <div class="disparador">
+                            <div>
+                                <div class="emergente">
+                                    <p>Soy emergente, pero no hijo directo de disparador</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Cuando queremos un selector que afecte a cualquier elemento "emergente" dentro de un elemento
+                            "disparador", sin importar el nivel de anidación usamos
+                            <code>.disparador .emergente {}</code>
+                        </p>
+                    </article>
+
+                </section>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>

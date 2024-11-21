@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.5rem;
+}
+.contenedor {
+    width: 1200px;
+    margin: 0 auto;
+    border: 1px solid #333;
+}
+.cabecera {
+    background-color: #333;
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+}
+.caja-flex {
+    display: flex;
+}
+.lateral {
+	width: 30%;
+	padding: 1rem;
+	background-color: #ccc;
+}
+.lista-noticias {
+	margin: 2rem 0;
+	padding: 1rem;
+	background-color: white;
+}
+.principal {
+    width: 70%;
+    padding: 2rem;
+}
+.item-noticias {
+	list-style: none;
+	border: 1px solid #333;
+	margin: 1.5rem auto;
+	border-radius: 5px;
+    width: 90%;
+}
+.item-noticias a {
+	padding: 1rem;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	color: #333;
+}
+.item-noticias a:hover {
+    background-color: #333;
+    color: #fff;
+}
+a.seleccionado {
+    background-color: #333;
+    color: #fff;
+}
+.bloque-principal {
+	margin: 3rem 1rem;
+	background-color: #ddd;
+	padding: 2rem;
+	border-radius: 1rem;
+}
+.titulo-contenido {
+	margin-bottom: 2rem;
+	border-bottom: 1px solid;
+	color: #333;
+	padding-left: 1rem;
+}
+.fila-fichas {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.ficha {
+	width: 30%;
+	border: 1px solid;
+	color: #333;
+	padding: .5rem .5rem 3rem;
+	border-radius: .5rem;
+	position: relative;
+}
+.ficha:hover  {
+	cursor: pointer;
+	background-color: #333;
+	color: #fff;
+	transform: scale(1.1);
+}
+.ficha:hover a {
+	color: #fff;
+}
+.ficha p {
+	font-size: .9rem;
+	margin: 1rem .5rem;
+}
+.ficha h4 {
+	font-style: italic;
+	text-align: center;
+	margin: 1rem 0;
+}
+.ficha a {
+	display: block;
+	text-align: center;
+	margin-top: 2rem;
+	font-size: 1rem;
+	position: absolute;
+	bottom: 1rem;
+	width: 40%;
+	left: 28%;
+	border: 1px solid;
+	text-decoration: none;
+	border-radius: .3rem;
+	padding: .2rem 0;
+}
+.banners{
+	margin-top: 6rem;
+}
+.publi {
+	background-color: #333;
+	color: #fff;
+	padding: 1rem;
+	margin: 3rem 0;
+	border-radius: 1rem;
+	cursor: pointer;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+.publi h5 {
+	font-size: 2rem;
+	width: 50%;
+	border-right: 1px solid;
+}
+.publi p {
+	width: 45%;
+	text-align: center;
+}
