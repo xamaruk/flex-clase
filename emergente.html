@@ -43,35 +43,39 @@
                 </section>
             </aside>
             <main class="principal">
-                <h2>Página de Productos Flex</h2>
+                <h2>Selectores anidados y adyecentes en CSS</h2>
                 <section class="contenedor-productos">
                     <article class="producto">
                         <h3>Ejemplo de selector adyacente:</h3>
                         <p>Con este html:</p>
-                        <pre><code>
-                            &lt;div class="disparador">
-                                &lt;p>Dispárame&lt;/p>
-                            &lt;/div>
-                            &lt;div class="emergente">
-                                &lt;p>Pam!&lt;/p>
-                            &lt;div>
-                            <p>Y este css</p>
-                            .disparador + .emergente {
-                                color: white;
-                            }
-                        </code></pre>
+    <pre><code>
+        &lt;div class="disparador">
+            &lt;p>Dispárame&lt;/p>
+        &lt;/div>
+        &lt;div class="emergente">
+            &lt;p>Pam!&lt;/p>
+        &lt;div>
+        <p>Y este css</p>
+        .disparador + .emergente {
+            color: white;
+        }
+    </code></pre>
                         <p>Afectamos al elemento con la clase "emergente" cuando está a continuación de "disparador":
                         </p>
-                        <div class="disparador">
-                            <p>Dispárame</p>
-                        </div>
-                        <div class="emergente">
-                            <p>Pam!</p>
-                        </div>
+                       <div class="muestra">
+                            <div class="disparador">
+                                <p>Dispárame</p>
+                            </div>
+                            <div class="emergente">
+                                <p>Pam!</p>
+                            </div>
+                       </div>
                         <p>Pero si está después de otro elemento no le afecta ese selector:</p>
                         <p>Sigue el contenido del artículo</p>
-                        <div class="emergente">
-                            <p>Estoy fuera del disparador</p>
+                        <div class="muestra">
+                            <div class="emergente">
+                                <p>Estoy fuera del disparador</p>
+                            </div>
                         </div>
                     </article>
                     <article class="producto">
@@ -81,7 +85,7 @@
     &lt;div class="disparador">
     &lt;p>Dispárame&lt;/p>
         &lt;div class="emergente">
-         &lt;p>Pam!&lt;/p>
+        &lt;p>Pam!&lt;/p>
         &lt;div>
         &lt;/div>
         <p>Y este css</p>
@@ -91,19 +95,23 @@
                         </code></pre>
                         <p>Afectamos al elemento con la clase "emergente" cuando está dentro, como hijo directo, de
                             "disparador":</p>
-                        <div class="disparador">
-                            <p>Dispárame</p>
-                            <div class="emergente">
-                                <p>Pam!</p>
+                        <div class="muestra">
+                            <div class="disparador">
+                                <p>Dispárame</p>
+                                <div class="emergente">
+                                    <p>Pam!</p>
+                                </div>
                             </div>
                         </div>
                         <p>Pero si no es hijo directo (hay otro u otros elementos contenedores ente ambos) no le afecta
                             ese selector:</p>
 
-                        <div class="disparador">
-                            <div>
-                                <div class="emergente">
-                                    <p>Soy emergente, pero no hijo directo de disparador</p>
+                        <div class="muestra">
+                            <div class="disparador">
+                                <div>
+                                    <div class="emergente">
+                                        <p>Soy emergente, pero no hijo directo de disparador</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>

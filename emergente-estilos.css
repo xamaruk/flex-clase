@@ -18,3 +18,28 @@
 .producto {
 	width: 49%;
 }
+code {
+	font-size: 1rem;
+	background-color: antiquewhite;
+	padding: .15rem;
+}
+.contenedor-productos {
+	display: flex;
+	justify-content: space-between;
+	font-family: 'trebuchet ms';
+}
+.producto h3 {
+	margin: 2rem auto;
+	border-bottom: 1px solid;
+	border-top: 1px solid;
+	padding: .5rem 1rem;
+}
+pre {
+	margin: 2rem 1rem;
+	border: 1px solid gray;
+}
+.muestra {
+	margin: 2rem 1rem;
+	background-color: antiquewhite;
+	padding: 1rem;
+}
