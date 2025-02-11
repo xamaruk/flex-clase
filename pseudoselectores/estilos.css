@@ -1,0 +1,119 @@
+
+/**Formato General*/
+.principal {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.ejemplos {
+	width: 45%;
+}
+
+/**Par e impar*/
+table, td {
+    border: 1px solid;
+    font-size: 1.5rem;
+    padding: .3rem;
+}
+/*? selector elementos impares */
+tr:nth-child(odd) {
+    background-color: aqua;
+}
+/*? selector elementos pares */
+tr:nth-child(even) {
+    background-color: aquamarine;
+}
+/*? para seleccionar saltando más de un elemento*/
+tr:nth-child(4n + 1) {
+   color:  blue;
+   font-weight: bold;
+}
+/*! Si queremos que salte 4 pero no empiece por la primera fila:*/
+/*! tr:nth-child(4n) { } */
+/**Para excluir elementos de la selección => dento de not() ponemos la expresión completa que queremos excluir*/
+/*? Vemos que se puede anidar selectores perfectamente*/
+
+tr:hover:not(tr:nth-child(4n + 1)) {
+    background-color: blue;
+    color: white;
+}
+
+/*AJEDREZ*/
+
+.fila-par, .fila-impar {
+    display: flex;
+    flex-wrap: wrap;
+}
+.celda {
+    width: 80px;
+    height: 80px;
+    border: 1px solid;
+}
+.fila-impar .celda:nth-child(even) {
+    background-color: black;
+}
+
+.fila-par .celda:nth-child(odd) {
+    background-color: black;
+}
+
+/**Caso 2*/
+
+.tablero {
+    display: flex;
+    flex-wrap: wrap;
+    width: 740px;
+    border: 15px double;
+}
+.tablero .celda:nth-child(even) {
+    background-color: black;
+}
+.tablero .celda:nth-child(9n) {
+	opacity: 0;
+}
+
+/** Selector cheked */
+
+/*? Ocultamos elementos que no se muestran inicialmente */
+#btn_menu, .menu {
+    display: none;
+}
+
+/*? Funcionalidad para mostrar/ocultar el menú */
+#btn_menu:checked + .menu {
+    display: initial;
+}
+
+/*?Formato para los elementos */
+.lbl-menu {
+	font-size: 1.5rem;
+	font-family: trebuchet ms;
+	font-weight: bold;
+	color: lavender;
+	background-color: dodgerblue;
+	padding: .4rem 1rem;
+	border-radius: .4rem;
+}
+.lbl-menu:hover {
+    color: paleturquoise;
+    cursor: pointer;
+}
+.menu ul {
+    padding: 0;
+    width: 250px;
+}
+.item-menu {
+	list-style: none;
+	margin: 0;
+}
+.item-menu a {
+    padding: 1rem;
+    display: block;
+    text-decoration: none;
+    background-color: lavender;
+    color: dodgerblue;
+    border: 1px solid;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+}

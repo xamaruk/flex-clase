@@ -1,0 +1,126 @@
+/** la directiva import permite vincular hojas de estilos externas dentrod e un archivo CSS, es el equivalente a la etiqueta link de html para CSS*/
+@import url('https://fonts.googleapis.com/css2?family=Enriqueta:wght@400;700&family=Niramit:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap');
+/** Sirve para organizar el CSS por archivos temáticos: uno para colores, otro para fuentes, etc.*/
+@import url('colores.css');
+html {
+    font-size: 20px;
+}
+body {
+    font-family: "Niramit", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Enriqueta", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .titular {
+    font-family: "Enriqueta", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  .resaltado {
+    font-family: "Niramit", sans-serif;
+    font-weight: 700;
+  }
+  .texto-fino {
+    font-family: "Niramit", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+  }
+  .cursiva {
+    font-family: "Niramit", sans-serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+
+  /*? USO de FONT GENERATOR */
+
+  @font-face {
+    font-family: 'chiller';
+    src: url('fonts/chiller.woff2') format('woff2'),
+         url('fonts/chiller.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+.chiller {
+  font-family: 'chiller';
+  font-size: 3.5rem;
+  color: red;
+}
+.iconos-fs {
+  display: flex;
+  justify-content: space-around;
+}
+.iconos-fs p {
+  color: lightgreen;
+  font-size: 4rem;
+}
+
+/*? USO de ICOMOON */
+
+@font-face {
+  font-family: 'iconos';
+  src:
+    url('fonts/icomoon.ttf?634td1') format('truetype'),
+    url('fonts/icomoon.woff?634td1') format('woff'),
+    url('fonts/icomoon.svg?634td1#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'iconos' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-adobe:before {
+  content: "\e900";
+  color: #f00;
+}
+.icon-acrobat:before {
+  content: "\e901";
+  color: #ee3f24;
+}
+.icon-aftereffects:before {
+  content: "\e902";
+  color: #d291ff;
+}
+.icon-audition:before {
+  content: "\e903";
+  color: #00e4bb;
+}
+.icon-illustrator:before {
+  content: "\e904";
+  color: #ff7c00;
+}
+.icon-photoshop:before {
+  content: "\e905";
+  color: #00c8ff;
+}
+.iconos-icm li {
+	list-style: none;
+	font-size: 2rem;
+	text-transform: capitalize;
+	margin-bottom: 1rem;
+}
+.iconos-icm li::before {
+	font-size: 3rem;
+	margin-right: 1rem;
+	position: relative;
+	top: 12px;
+	text-shadow: 2px 2px 0 gray;
+}

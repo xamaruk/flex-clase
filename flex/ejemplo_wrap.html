@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css" type="text/css">
+    <link rel="stylesheet" href="wrap.css">
+    <title>Ejemplo uso flex-wrap y div.contenedor</title>
+</head>
+<body>
+    <div class="contenedor">
+        <header class="cabecera">
+            <div class="cont-logo"><img src="imgs/ficha2.jpg" alt="Logo del sitio"></div>
+            <div class="titulares">
+                <h1 class="titular">Título de la página</h1>
+                <h2 class="subtit">Ajustes flexibles sobre un contenedor</h2>
+            </div>
+            <div class="cont-logo"><img src="imgs/ficha2.jpg" alt="Logo del sitio"></div>
+        </header>
+        <div class="caja-flex">
+            <aside class="lateral">
+                <section>
+                    <h2>Noticias de interés</h2>
+                    <ul class="lista-noticias">
+                        <li class="item-noticias"><a href="display_flex.html">Inicio</a></li>
+                        <li class="item-noticias"><a href="productos.html">Productos</a></li>
+                        <li class="item-noticias"><a href="emergente.html">Emergente</a></li>
+                        <li class="item-noticias"><a href="rejilla.html">Rejilla</a></li>
+                        <li class="item-noticias"><a href="ejemplo_wrap.html" class="seleccionado">Ejemplo Wrap</a></li>
+                        <li class="item-noticias"><a href="">Noticia número 6</a></li>
+                    </ul>
+                </section>
+                <section class="banners">
+                    <div class="publi">
+                        <h5>Atención</h5>
+                        <p>Ventas privadas</p>
+                    </div>
+                    <div class="publi">
+                        <h5>Ojo!</h5>
+                        <p>Ventas de saldo</p>
+                    </div>
+                    <div class="publi">
+                        <h5>Cuidao!!</h5>
+                        <p>Ventas y reventas</p>
+                    </div>
+                </section>
+            </aside>
+            <main class="principal">
+                <h2>Configuración <em>flex</em> para la cabecera de este documento</h2>
+                <p>Código <strong>HTML</strong> para la cabecera</p>
+<pre><code>
+    &lt;header class="cabecera">
+        &lt;div class="cont-logo">
+            &lt;img src="imgs/ficha2.jpg" alt="Logo del sitio">
+        &lt;/div>
+        &lt;div class="titulares">
+            &lt;h1 class="titular">
+                Título de la página
+            &lt;/h1>
+            &lt;h2 class="subtit">
+                Ajustes flexibles sobre un contenedor
+            &lt;/h2>
+        &lt;/div>
+        &lt;div class="cont-logo">
+            &lt;img src="imgs/ficha2.jpg" alt="Logo del sitio">
+        &lt;/div>
+    &lt;/header>
+</code></pre>
+                <p>Código <em>CSS</em> usado </p>
+<pre><code>
+    .cabecera {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .cont-logo {
+        width: 15%;
+    }
+    .titulares {
+        width: 70%;
+    }
+</code></pre>
+            </main>
+        </div>
+    </div>
+</body>
+</html>

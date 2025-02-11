@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css" type="text/css">
+    <title>Ejemplos de uso de la propiedad Background</title>
+</head>
+<body>
+    <div class="contenedor">
+        <header class="cabecera">
+            <h1>Ejemplos de Fondo con CSS</h1>
+            <p>En esta cabecera aplicamos el color de fondo con transparencia:</p>
+<pre><code>
+    .cabecera {
+        font-size: 2rem;
+        text-align: center;
+        background-color: #bd1616c7;
+    } 
+</code></pre>
+        </header>
+        <main class="principal">
+            <section class="bloque">
+                <h2>Imagen de fondo</h2>
+                <p>Las imágenes de fondo por defecto se repiten a lo largo de su contenedor, además al elemento con la clase principal le añadimos un color de fondo con transparencia a las secciones para que su texto sea más legible sobre la imagen de fondo:</p>
+<pre><code>
+    body {
+        background-image: url('../imgs/fondo.jpg');
+    }
+    .bloque {
+        margin: 3rem 0;
+        padding: 2rem;
+        border: 1px solid;
+        background-color: #fff9;
+    }
+</code></pre>
+            <p>Para controlar como se repite la imagen de fondo tenemos la propiedad <code>background-repeat</code>, por defecto tiene el valor <em>repeat</em>, que hace que la imagen se repita a lo ancho y alto del contenedor para cubrir todo el elemento.<br>Otros valores posibles son: </p>
+            <ul>
+                <li><em>no-repeat</em>: para que no se repita  y se muestre una sola vez</li>
+                <li><em>repeat-x</em>: para que se repita solo en el eje horizontal</li>
+                <li><em>repeat-y</em>: para que se repita en el eje vertical</li>
+            </ul>
+            <h3>Tamaño de imagen de fondo</h3>
+            <p>La propiedad <code>background-size</code> permite modificar el tamaño de la imagen insertada. Podemos definir valores en píxeles para el ancho y alto, en porcentajes, o usar palabras clave como <em>contain y cover</em>. <br>A nuestra clase <em>principal</em> le añadimos ahora estas propiedasdes:</p>
+<pre><code>
+    .principal {
+        background-image: url(../imgs/playa4.jpg);
+        background-repeat: no-repeat;
+        background-size: 800px;
+    }
+</code></pre>
+            <h3>Posición de la imagen de fondo</h3>
+            <p>La propiedad <code>background-position</code> permite definir donde ubicar la imagen en el contenedor. Puede ser con valores en píxeles (o cualquier unidad válida en CSS), porcentajes, o las palabras clave <em>top, center, bottom, right, left</em></p>
+            <p>Una forma rápida de hacer que la imagen se quede centrada en el contenedor sobre los dos ejes es añadiendo:</p>
+<pre><code>
+    .principal {
+        background-position: center;
+    }
+</code></pre>
+            <h3>Efecto parallax</h3>
+            <p>Este efecto se consigue haciendo que el contenido del elemento pase por encima de su imagen de fondo, que permanece fija mientras hacemos scroll sobreel elemento. La propiedad que usamos es <code>background-attachment</code>, y sus valores son <em>fixed</em>, para conseguir ese efecto, o <em>scroll</em> para que la imagen se desplace con el elemento (este es el valor por defecto).</p>
+            <p>Hay que tener en cuenta que esta propiedad entra en conflicto con la propiedad de <em>background-position</em> sobre el eje vertical y habrá que trabajar con una de las dos únicamente:</p>
+<pre><code>
+    .principal {
+        background-attachment: fixed;
+    }
+</code></pre>
+            </section>
+            <section class="bloque">
+                <h2>Galería de imágenes en CSS</h2>
+                <p>Podemos crear una galería de imágenes en CSS sin usar elementos <strong>img</strong>, usando solamente elementos <strong>div</strong> controlados por clases y atributos <em>id</em> de CSS para mostrar las imágenes.</p>
+                <p>El html inicial es:</p>
+<pre><code>
+    &lt;article class="galeria">
+        &lt;div class="item-galeria" id="foto_1">&lt;/div>
+        &lt;div class="item-galeria" id="foto_2">&lt;/div>
+        &lt;div class="item-galeria" id="foto_3">&lt;/div>
+        &lt;div class="item-galeria" id="foto_4">&lt;/div>
+    &lt;/article>
+</code></pre>
+                <p>El CSS para dar formato a la galería incial es este:</p>
+<pre><code>
+    .item-galeria {
+        width: 40%;
+        height: 350px;
+        border: 1px solid;
+        background-color: #e3af4da3;
+        margin: 2rem auto;
+    }
+    .galeria {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+</code></pre>
+                <p>Para que cada contenedor muestre una imagen usamos su selector de id con CSS:</p>
+<pre><code>
+    #foto_1 {
+        background-image: url('../imgs/playa1.jpg');
+    }
+    #foto_2 {
+        background-image: url('../imgs/playa2.jpg');
+    }
+    #foto_3 {
+        background-image: url('../imgs/playa3.jpg');
+    }
+    #foto_4 {
+        background-image: url('../imgs/playa4.jpg');
+    }
+</code></pre>
+                <p>Y por último, ajustamos las propiedades de imagen de fon do que hemos visto antes para el tamaño y la posición sobre la clase de los elementos de galería, añadieno esto:</p>
+<pre><code>
+    .item-galeria {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+</code></pre>
+                <h4>Fotos de playa</h4>
+                <article class="galeria">
+                    <div class="item-galeria" id="foto_1"></div>
+                    <div class="item-galeria" id="foto_2"></div>
+                    <div class="item-galeria" id="foto_3"></div>
+                    <div class="item-galeria" id="foto_4"></div>
+                </article>
+            </section>
+            <section class="bloque">
+                <h2>Ajustes con imágenes de fondo</h2>
+                <p>Otras propiedades y comportamientos disponibles con CSS para las imágenes de fondo.</p>
+                <h3>Intercambio con efecto <em>hover</em></h3>
+                <p>Podemos generar un efecto de intercambio de imágenes  al pasar el ratón por encima de una imagen usando CSS, aplicando el pseudo-selector <strong>hover</strong>. Esto evita usar JavaScript. Es un componente muy habitual a la hora de construir los menús de los sitios para crear los efectos de intercambio de imagen en cada item del menú.</p>
+                <p>Todo lo que tenemos que hacer es definir la imagen de fondo por CSS y añadir el pseudo-selector con la imagen que queremos intercambiar:</p>
+<pre><code>
+    .foto-patron {
+        width: 40%;
+        height: 400px;
+        margin: 2rem auto;
+        background-image: url('../imgs/patron1.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        border: 1px solid;
+        background-color: #e3af4da3;
+    }
+    .foto-patron:hover {
+        background-image: url('../imgs/patron2.jpg');
+    }
+</code></pre>
+                <div class="foto-patron"></div>
+                <h4>Ejemplo de menú con intercambio de imagen</h4>
+                <p>Usamos este HTML y CSS iniciales:</p>
+<pre><code>
+    &lt;nav class="menu">
+        &lt;ul class="items-menu">
+            &lt;li>&lt;a href="#" class="elem-menu">Elemento 1&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#" class="elem-menu">Elemento 2&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#" class="elem-menu">Elemento 3&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#" class="elem-menu">Elemento 4&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#" class="elem-menu">Elemento 5&lt;/a>&lt;/li>
+        &lt;/ul>
+    &lt;/nav>
+    
+    .menu {
+        background-color: #71d0cc9e;
+        padding: 2rem 0;
+    }
+    .items-menu {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .items-menu li {
+        width: 20%;
+        list-style: none;
+    }
+    .elem-menu {
+        text-decoration: none;
+        text-align: center;
+        display: block;
+        background-color: antiquewhite;
+        padding: 1rem;
+        border: 1px solid;
+        color: orange;
+    }
+</code></pre>
+                <p>A partir de aquí añadimos el CSS para mostrar la imagen en cada uno de los elementos del menú, y el pseudo-selector <em>hover</em> para indicar la imagen de intercambio, además de todo el formato adicional que queramos aplicar para ese selector.</p>
+<pre><code>
+    .elem-menu {
+        background-image: url('../imgs/flecha-amarilla.png');
+        background-size: 40px;
+        background-repeat: no-repeat;
+        background-position: 210px center;
+    }
+
+    .elem-menu:hover {
+        background-image: url('../imgs/flecha-roja.png');
+        color: red;
+    }
+</code></pre>
+                <nav class="menu">
+                    <ul class="items-menu">
+                        <li><a href="#" class="elem-menu">Elemento 1</a></li>
+                        <li><a href="#" class="elem-menu">Elemento 2</a></li>
+                        <li><a href="#" class="elem-menu">Elemento 3</a></li>
+                        <li><a href="#" class="elem-menu">Elemento 4</a></li>
+                        <li><a href="#" class="elem-menu">Elemento 5</a></li>
+                    </ul>
+                </nav>
+            </section>
+            <section class="bloque">
+                <h2>Posición de la imagen de fondo respecto a su contenedor</h2>
+                <p>El modelo de caja de HTML define 3 límites posibles para un contenedor: el que establece la posición externa de su borde, si lo tiene, el que establece el inicio de la zona de padding, que corresponde con el lado interior del borde, y el que establece la zona de contenido a partir del padding que pueda llevar ese elemento. Respectivamente son los valores <code>border-box, padding-box  content-box</code>, y pueden ser definidos por la propiedad <strong>background-origin</strong>. Partimos de estos 3 elementos con el mismo formato y misma imagen de fondo:</p>
+<pre><code>
+    &lt;div class="origen" id="origen_1">&lt;/div>
+    &lt;div class="origen" id="origen_2">&lt;/div>
+    &lt;div class="origen" id="origen_3">&lt;/div>
+    .origen {
+        width: 32%;
+        height: 400px;
+        background-color: #5b8ab39e;
+        border: 50px solid #f5f5dc80;
+        margin: 2rem auto;
+        padding: 25px;
+        background-image: url('../imgs/patron1.jpg');
+        background-repeat: no-repeat;
+        background-size: 270px;
+    }
+</code></pre>
+<p>Para cada uno de ellos definimos un valor diferente para el origen de la imagen de fondo:</p>
+<pre><code>
+    #origen_1 {
+        background-origin: border-box;
+    }
+    #origen_2 {
+        background-origin: padding-box;
+    }
+    #origen_3 {
+        background-origin: content-box;
+    }
+</code></pre>
+                <article class="flexible">
+                    <div class="origen" id="origen_1"></div>
+                    <div class="origen" id="origen_2"></div>
+                    <div class="origen" id="origen_3"></div>
+                </article>
+            </section>
+            <section class="bloque">
+                <h2>Degradados en fondos con CSS</h2>
+                <p>Podemos aplicar valores de color no sólidos a los elementos de fondo de las etiquetas html con la siguiente propiedad:</p>
+<pre><code>
+    pre {
+        background: linear-gradient(to bottom,  rgb(6,224,224) 0%,
+        rgb(184,221,221) 50%,rgb(244,205,97) 100%);
+    }
+</code></pre>
+                <p>Para definir los valores de degradado de forma visual es útil tener alguna web de referencia donde generar el código CSS y copiarlo a nuestro documento, por ejemplo <a href="https://www.colorzilla.com/gradient-editor/" target="_blank">Colorzilla Gradient Generator</a></p>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
