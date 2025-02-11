@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css" type="text/css">
+    <title>Elemento Emergentes</title>
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Elementos emergentes</h1>
+        <h2>Selectores por atributos</h2>
+        <div class="texto-uno">Este elemento es seleccionado por el atributo class y porque su nombre empieza por texto. <br>El selector de atributo que le afecta es este: <code> div[class]</code><br>El selector por nombre de clase es <code>div[class^="texto-"] {...}</code></div>
+        <div class="imagen">Este elemento solo es seleccionado por tener un atributo class. <br><br>El selector de atributo que le afecta es este: <code> div[class]</code></div>
+        <div class="texto-dos">Este elemento es seleccionado como el primero, por atributo y por el nombre de su clase. <br><br>El selector de atributo que le afecta es este: <code> div[class]</code><br>El selector por nombre de clase es <code>div[class^="texto-"] {...}</code></div>
+        <p class="fuera">Este elemento no se ve afectado por tener un atributo de class. Para que le afectase tendría que ser así <code> [class]{...}</code></p>
+        <h2>Elemento Details</h2>
+        <details class="detalles" open>
+            <summary>Elemento desplegable</summary>
+            <div class="blq-despl">
+                <ul>
+                    <li>Elemento desplegable 1</li>
+                    <li>Elemento desplegable 2</li>
+                    <li>Elemento desplegable 3</li>
+                    <li>Elemento desplegable 4</li>
+                    <li>Elemento desplegable 5</li>
+                    <li>Elemento desplegable 6</li>
+                    <li>Elemento desplegable 7</li>
+                    <li>Elemento desplegable 8</li>
+                    <li>Elemento desplegable 9</li>
+                    <li>Elemento desplegable 10</li>
+                </ul>
+            </div>
+        </details>
+        <h2>Elemento Dialog</h2>
+        <p>Pulsa en el siguiente botón para mostrar un cuadro emergente: <button id="btn_dialog">Mostrar</button></p>
+        <p>Pulsa en el siguiente botón para cerrar el cuadro emergente: <button id="btn_cerrar">Cerrar</button></p>
+        <dialog class="cuadro-emer" id="emergente">
+            <h3>Esto es un cuadro emergente</h3>
+            <p>Este párrafo también forma parte del elemento emergente</p>
+            <button id="btn_cuadro">Cerrar</button>
+        </dialog>
+    </div>
+    <script>
+        document.getElementById('btn_dialog').onclick = function () {
+            document.getElementById('emergente').show();
+        }
+        document.getElementById('btn_cerrar').onclick = function () {
+            document.getElementById('emergente').close();
+        }
+        document.getElementById('btn_cuadro').onclick = function () {
+            document.getElementById('emergente').close();
+        }
+    </script>
+</body>
+</html>

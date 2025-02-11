@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+div[class] {
+    border: 1px solid;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+div[class^="texto-"] {
+    background-color: bisque;
+}
+
+.detalles {
+    margin: 3rem auto;
+    width: 80%;
+    background-color: bisque;
+    padding: 1rem;
+    font-size: 1.4rem;
+}
+.detalles[open] {
+    background-color: aqua;
+    border: 2px solid darkcyan;
+}
+
+.detalles[open] .blq-despl {
+    border: none;
+}
+
+summary {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: brown;
+}
+.detalles[open] summary {
+    color: darkcyan;
+}
+.cuadro-emer {
+	font-size: 3rem;
+	padding: 1rem;
+	background: aliceblue;
+	top: 0;
+	width: 40%;
+	margin: auto;
+}
